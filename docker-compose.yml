@@ -13,7 +13,7 @@ services:
        - SPRING_JPA_HIBERNATE_DDL_AUTO=update
        - SPRING_DATA_SOURCE_DRIVER_CLASS_NAME=com.mysql.cj.jdbc.Driver
      depends_on:
-   #my sql database
+   # my sql database
   mysql:
     image: mysql:5.7
     restart: always
@@ -23,7 +23,10 @@ services:
     MYSQl_ROOT_PASSWORD: 'root'
   ports:
     - '0.0.0.0:3306:3306'
-  volumes:
+   volumes:
+        - api_etudiant:/var/lib/mysql
+     # liste des volumes
+ volumes:
     api_etudiant:
     
     
