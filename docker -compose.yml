@@ -1,0 +1,30 @@
+version: '3'
+services:
+     
+  # Spring Boot Application
+  spring-boot-app:
+    image: backend
+    ports:
+      - "0.0.0.0:8001:8001"
+    environnement:
+       - SPRING_DATASOURCE_url=://localhost:3306/api_etudiant
+       -spring.datasource.username=root
+       -spring.datasource.password=root
+       -spring.jpa.hibernate.ddl-auto=update
+       -spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+     depends_on:
+   #my sql database
+  mysql:
+    image: mysql:5.7
+    restart: always
+  environment:
+    MYSQL_DATABASE:'api_etudiant'
+    MYSQl_ROOT_USERNAME:'root'
+    MYSQl_ROOT_PASSWORD:'root'
+  ports:
+    - '0.0.0.0:3306:3306'
+  volumes:
+    api_etudiant:
+    
+    
+  
