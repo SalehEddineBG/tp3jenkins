@@ -7,9 +7,9 @@ services:
     ports:
       - "0.0.0.0:8091:8091"
     environnement:
-       - SPRING_DATASOURCE_URL=jdbc:mysql//mysql:3306/api_etudiant
-       - SPRING_DATASOURCE.USERNAME=root
-       - SPRING_DATASOURCE.PASSWORD=root
+       - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/api_etudiant
+       - SPRING_DATASOURCE_USERNAME=root
+       - SPRING_DATASOURCE_PASSWORD=root
        - SPRING_JPA_HIBERNATE_DDL_AUTO=update
        - SPRING_DATA_SOURCE_DRIVER_CLASS_NAME=com.mysql.cj.jdbc.Driver
      depends_on:
@@ -18,9 +18,9 @@ services:
     image: mysql:5.7
     restart: always
   environment:
-    MYSQL_DATABASE:'api_etudiant'
-    MYSQl_ROOT_USERNAME:'root'
-    MYSQl_ROOT_PASSWORD:'root'
+    MYSQL_DATABASE: 'api_etudiant'
+    MYSQl_ROOT_USERNAME: 'root'
+    MYSQl_ROOT_PASSWORD: 'root'
   ports:
     - '0.0.0.0:3306:3306'
   volumes:
